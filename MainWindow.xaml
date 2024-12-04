@@ -1,0 +1,45 @@
+﻿<Window x:Class="Paint.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Paint Application" Height="550" Width="900">
+
+    <Grid>
+        <ToolBar Height="30" VerticalAlignment="Top" Margin="0,0,0,404">
+            <Button Content="Clear" Width="60" Click="ClearCanvas"/>
+
+            <Label Content="Brush Size:" Width="70" />
+            <ComboBox Name="thicknessSelector" Width="65">
+                <ComboBoxItem Content="2" Name="one" />
+                <ComboBoxItem Content="4" Name="two" />
+                <ComboBoxItem Content="6" Name="three" />
+                <ComboBoxItem Content="8" Name="four" />
+                <ComboBoxItem Content="10" Name="five" />
+            </ComboBox>
+
+            <Label Content="Brush Color:" Width="75" />
+            <ComboBox Name="colorSelector" Width="68">
+                <ComboBoxItem Content="Red" Name="red" />
+                <ComboBoxItem Content="Blue" Name="blue" />
+                <ComboBoxItem Content="Yellow" Name="yellow" />
+                <ComboBoxItem Content="Black" Name="black" />
+                <ComboBoxItem Content="Green" Name="green" />
+            </ComboBox>
+
+            <Label Content="Mode:" Width="45" />
+            <ComboBox Name="drawStyle" Width="103">
+                <ComboBoxItem Content="Free Draw" Name="FreeDraw" />
+                <ComboBoxItem Content="Straight Line" Name="StraightLine" />
+            </ComboBox>
+        </ToolBar>
+
+        <Canvas Name="paintCanvas"
+                Background="White"
+                Margin="0,35,0,0"
+                MouseMove="Canvas_MouseMove"
+                MouseDown="Canvas_MouseDown"
+                MouseUp="Canvas_MouseUp" />
+    </Grid>
+</Window>
